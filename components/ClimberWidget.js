@@ -7,7 +7,7 @@ export function ClimberWidget( { climber }) {
   return (
     <View style={globalStyles.widget}>
       <TouchableOpacity style={styles.container}>
-        <Image style={styles.img} source={require('../assets/acr.jpeg')}/>
+        <Image style={styles.img} source={climber.pic ? climber.pic : require('../assets/climbs.png')}/>
         <View style={styles.name}>
           <Text style={globalStyles.h2}>{climber.name}</Text>
           <View style={styles.info}>

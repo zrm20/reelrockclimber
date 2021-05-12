@@ -30,7 +30,7 @@ export function GoalsWidget({ goalList }) {
   return (
     <View style={globalStyles.widget}>
       <Text style={globalStyles.h2}>Goals</Text>
-      {goalList.map(item => <Goal goal={item}/>)}
+      {goalList.map(item => <Goal key={item.key} goal={item}/>)}
     </View>
   );
 } 

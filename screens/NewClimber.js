@@ -1,19 +1,21 @@
-import React from 'react';
-import { View, Text, Button, TextInput, StyleSheet, Platform } from 'react-native';
+import React, {useState,} from 'react';
+import { View, Text, Button, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import{ globalStyles } from '../styles/gobalStyles'
-import { ExpoImagePicker } from '../components/ExpoImagePicker'
+import ImagePicker from '../components/ImgSelector';
+import ImgSelector from '../components/ImgSelector';
 
 export function NewClimber() {
+
   return(
     <View style={styles.container}>
 
       <Text style={globalStyles.h1}>ReelRock Climber</Text>
-
+      <Text style={globalStyles.h2}>New Climber Profile</Text>
       <View style={styles.form}>
-        <ExpoImagePicker style={styles.imagePicker} />
         <Text style={globalStyles.h3}>Climber Name</Text>
         <TextInput style={styles.textInput}/ >
-        <Button title='Add Climber'/>
+        <Button style={styles.submitButton} title='Add Climber'/>
+        <ImgSelector />
       </View>
 
     </View>
@@ -29,21 +31,23 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   form: {
-    flex: 1,
     width: '100%',
     padding: 30,
-    justifyContent: 'flex-start',
+    justifyContent: 'center',
+
   },
   text: {
     color: '#fff',
     fontSize: 20,
-    fontFamily: 'ariel-rounded'
+    fontFamily: 'ariel-rounded',
   },
   textInput: {
     backgroundColor: '#fff',
     width: '90%',
+    height: 40,
+    marginBottom: 60,
   },
-  imagePicker: {
-    margin: 0,
+  submitButton: {
+    margin: 20,
   }
 });

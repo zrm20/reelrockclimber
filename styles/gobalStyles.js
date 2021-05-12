@@ -29,5 +29,20 @@ export const globalStyles = StyleSheet.create({
     borderRadius: 7,
     padding: 7,
     marginVertical: 4,
+  },
+  titleFont: {
+    fontFamily: 'lithos-pro',
+    color: '#A5E6BA'
+  },
+  headerFont: {
+    color: '#fff',
+    fontFamily: 'arial-rounded'
+  },
+  bodyFont: {
+    color: '#fff',
+    fontFamily: 'arial-rounded'
+  },
+  primaryBorder: {
+    borderColor: '#A5E6BA'
   }
 });

@@ -21,7 +21,7 @@ export function StatsWidget( {categories} ) {
     <View style={globalStyles.widget}>
       <Text style={globalStyles.h2}>Stats</Text>
       <View style={styles.table}>
-       {categories.map(item => <Stat category={item} />)}
+       {categories.map(item => <Stat key={item.key} category={item} />)}
       </View>
     </View>
   );
