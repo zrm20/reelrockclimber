@@ -1,5 +1,7 @@
 export default class Route {
 
+  //todo add index properties so higher classes can calc avg and max ratings
+
   constructor(id, sessionId, type, rating, attempts, isSent = true, height = null){
     this.id = id;
     this.sessionId = sessionId;

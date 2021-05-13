@@ -37,9 +37,9 @@ export default function App() {
     console.log("Fonts Done Loading");
     return (
       //<SessionCard session={alyssa.sessionList[0]}/>
-      <Dashboard climber={alyssa} />
+      //<Dashboard climber={alyssa} />
       // <NewClimber />
-      // <NavBar climber={alyssa}/>
+      <NavBar climber={alyssa}/>
 
     );
   } else {
@@ -52,21 +52,3 @@ export default function App() {
     )
   }
 } 
-
-
-// const alyssa = {
-//   name: 'Alyssa Reel',
-//   pic: require('./assets/acr.jpeg'),
-//   totalPoints: 12490,
-//   totalFeet: 5280,
-//   dashStats: [
-//     {key: 1, name: 'Boulder', avg: 'V3', max: 'V4'},
-//     {key: 2, name: 'Top-Rope', avg: '5.10-', max: '5.11'},
-//     {key: 3, name: 'Lead', avg: '5.9', max: '5.10'},
-//     {key: 4, name: 'Session', avg: '167', max: '220'}
-//   ],
-//   goalList: [
-//     {key: 1, goalName: 'Short Term Goal', daysToGo: 94, progress: .8},
-//     {key: 2, goalName: 'Long Term Goal', daysToGo: 204, progress: .75},
-//   ]
-// }
