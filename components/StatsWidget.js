@@ -7,7 +7,7 @@ function Stat({ category } ) {
   return(
     <TouchableOpacity style={styles.column}>
       <Text style={styles.headerText}>{category.name}</Text>
-      <Text style={styles.dataText}>{category.avg}</Text>
+      <Text style={styles.dataText}>{category.average}</Text>
       <Text style={styles.text}>avg</Text>
       <Text style={styles.dataText}>{category.max}</Text>
       <Text style={styles.text}>max</Text>
@@ -16,7 +16,7 @@ function Stat({ category } ) {
 }
 
 // accepts an array of stat categories that contain name, average and max 
-export function StatsWidget( {categories} ) {
+export function StatsWidget( { categories } ) {
   return (
     <View style={globalStyles.widget}>
       <Text style={globalStyles.h2}>Stats</Text>

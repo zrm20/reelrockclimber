@@ -27,7 +27,7 @@ export default class Session {
 
   printSession() {
     console.log(`Climbing Session ${this.id}`);
-    console.log(this.date.getDate());
+    console.log(this.date.toLocaleDateString());
   }
 
   //properties
@@ -35,5 +35,47 @@ export default class Session {
     return this.calcSessionScore();
   }
 
-  //todo boulderCount, topRopeCount, leadCount
+  get locationName() {
+    switch(this.location){
+      case 'west': return 'Climb West'
+      case'east': return 'Climb East'
+      case 'murfreesboro': return 'Climb Murfreesboro'
+    }
+  } 
+
+  get totalRoutes() {
+    return this.routeList.length;
+  }
+
+  get avgRouteScore() {
+    return this.score/this.totalRoutes;
+  }
+
+  get boulderCount() {
+    let boulderCount = 0;
+    this.routeList.forEach((r) =>{if(r.type === 'boulder') boulderCount++});
+    return boulderCount;
+  }
+
+  get topRopeCount() {
+    let topRopeCount = 0;
+    this.routeList.forEach((r) =>{if(r.type === 'topRope') topRopeCount++});
+    return topRopeCount;
+  }
+
+  get leadCount() {
+    let leadCount = 0;
+    this.routeList.forEach((r) =>{if(r.type === 'lead') leadCount++});
+    return leadCount;
+  }
+
+  get totalHeight() {
+    let totalHeight = 0;
+    this.routeList.forEach((r) =>{totalHeight += r.height});
+    return totalHeight;
+  }
+
+  get avgBoulderRating() {
+    let avgBoulderInde
+  }
 }

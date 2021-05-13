@@ -16,7 +16,7 @@ export function Dashboard( { climber } ) {
         <View style={styles.bodyContent}>
           <StatsWidget categories={climber.dashStats}/>
           <LastMonthWidget />
-          <GoalsWidget goalList={climber.goalList}/>
+          {/* <GoalsWidget goalList={climber.goalList}/> */}
         </View>
       </ScrollView>
     </View>
@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 50,
     paddingHorizontal: 3,
-    backgroundColor: '#360568',
+    backgroundColor: globalStyles.mainBackground.backgroundColor,
     alignItems: 'center',
   },
   body: {
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   nav: {
-    backgroundColor: '#7785AC',
+    backgroundColor: globalStyles.secondaryBackground.backgroundColor,
     width: '100%',
     height: 80,
     alignItems: 'center',

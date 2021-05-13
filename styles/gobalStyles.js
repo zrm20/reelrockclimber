@@ -44,5 +44,20 @@ export const globalStyles = StyleSheet.create({
   },
   primaryBorder: {
     borderColor: '#A5E6BA'
+  },
+  bgColor1: {
+    backgroundColor: '#360568'
+  },
+  bgColor2: {
+    backgroundColor: '#5b2a86'
+  },
+  bgColor3: {
+    backgroundColor: '#7785ac'
+  },
+  bgColor4: {
+    backgroundColor: '#9ac6c5'
+  },
+  bgColor5: {
+    backgroundColor: '#a5e6ba'
   }
 });

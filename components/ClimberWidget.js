@@ -7,12 +7,12 @@ export function ClimberWidget( { climber }) {
   return (
     <View style={globalStyles.widget}>
       <TouchableOpacity style={styles.container}>
-        <Image style={styles.img} source={climber.pic ? climber.pic : require('../assets/climbs.png')}/>
+        <Image style={styles.img} source={climber.picUri ? climber.picUri : require('../assets/climbs.png')}/>
         <View style={styles.name}>
           <Text style={globalStyles.h2}>{climber.name}</Text>
           <View style={styles.info}>
-            <Text style={styles.text}>{climber.totalPoints} Points</Text>
-            <Text style={styles.text}>{climber.totalFeet}' Climbed</Text>
+            <Text style={styles.text}>{climber.totalPoints} Total Points</Text>
+            <Text style={styles.text}>{climber.totalHeight}' Climbed</Text>
           </View>
         </View>
       </TouchableOpacity>
