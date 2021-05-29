@@ -1,5 +1,5 @@
 import React from 'react';
-import { Text, View, ScrollView, StyleSheet, } from 'react-native';
+import { View, ScrollView, StyleSheet, } from 'react-native';
 import { globalStyles } from '../styles/gobalStyles';
 import { ClimberWidget } from '../components/ClimberWidget';
 import { StatsWidget } from '../components/StatsWidget';
@@ -37,12 +37,6 @@ const styles = StyleSheet.create({
   },
   bodyContent: {
     flex: 1,
-    alignItems: 'center',
-  },
-  nav: {
-    backgroundColor: globalStyles.secondaryBackground.backgroundColor,
-    width: '100%',
-    height: 80,
     alignItems: 'center',
   }
 });

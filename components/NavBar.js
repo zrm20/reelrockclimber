@@ -6,7 +6,6 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { FontAwesome } from '@expo/vector-icons';
 import { Dashboard } from '../screens/Dashboard'
 import { NewClimber } from '../screens/NewClimber'
-import { ClimberContext } from '../contexts/ClimberContext';
 import { Users } from '../screens/Users';
 import { LogBook } from '../screens/LogBook';
 import { Graphs } from '../screens/Graphs';
@@ -96,7 +95,10 @@ export function NavBar() {
       >
         <Tab.Screen name="Dashboard" component={DashboardStackScreen} />
         <Tab.Screen name="Log Book" component={LogBookStackScreen} />
-        <Tab.Screen name="New Session" component={NewSessionScreen} />
+        <Tab.Screen 
+          name="New Session" 
+          component={NewSessionScreen} 
+          />
         <Tab.Screen name="Graphs" component={Graphs} />
         <Tab.Screen name="Users" component={usersStackScreen} />
       </Tab.Navigator>
@@ -107,6 +109,7 @@ export function NavBar() {
 const globalHeaderStyle = {
   headerStyle: {
     backgroundColor: globalStyles.mainBackground.backgroundColor,
+    marginBottom: 20
   },
   headerTintColor: globalStyles.titleFont.color,
   headerTitleStyle: {

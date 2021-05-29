@@ -5,7 +5,10 @@ import Climber from '../classes/Climber'
 export const ClimberContext = createContext();
 
 export default function ClimberContextProvider(props) {
-  const [climbers, setClimbers] = useState([]);
+
+  const zach = new Climber(1, 'zach')
+
+  const [climbers, setClimbers] = useState([zach]);
 
   const [activeClimber, setActiveClimber] = useState({name: '', id: -1})
 

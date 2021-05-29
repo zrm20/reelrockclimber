@@ -1,42 +1,43 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Text, View, ScrollView, StyleSheet, } from 'react-native';
 import { NewClimberButton } from '../components/NewClimberButton';
 import { globalStyles } from '../styles/gobalStyles';
+import Climber from '../classes/Climber'
+import { ClimberWidget } from '../components/ClimberWidget';
 
 export function Users( { navigation } ) {
 
-    const pressHandler = () => navigation.navigate('New Climber');
+  // const [climberList, setClimberList] = useState([])
 
-    return(
-      <View style={styles.container}>
-        <ScrollView style={styles.body}>
-          
-        </ScrollView>
-        <NewClimberButton pressHandler={pressHandler}/>
-      </View>
-    );
+  // function addClimber(name) {
+  //   const nextId = climberList.length > 0 ? climberList[climberList.length - 1].id + 1 : 1;
+  //   setClimberList([...climberList, new Climber(nextId, name)]);
+  //   console.log(`${name} added to climber list`);
+  // }
+
+  // const pressHandler = () => navigation.navigate('New Climber', {submitHandler: addClimber});
+
+  return(
+    <View style={styles.container}>
+      {/* <ScrollView style={styles.body}>
+        {climberList.map((item) => (<ClimberWidget key={item.id} climber={item}/>))}
+      </ScrollView> */}
+      <NewClimberButton pressHandler={pressHandler}/>
+    </View>
+  );
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 5,
-    paddingHorizontal: 3,
+    paddingTop: 90,
+    paddingHorizontal: 10,
     backgroundColor: globalStyles.mainBackground.backgroundColor,
     alignItems: 'center',
   },
   body: {
     width: '100%',
     flex: 1,
-  },
-  bodyContent: {
-    flex: 1,
-    alignItems: 'center',
-  },
-  nav: {
-    backgroundColor: globalStyles.secondaryBackground.backgroundColor,
-    width: '100%',
-    height: 80,
-    alignItems: 'center',
+    alignContent: 'center'
   }
 });

@@ -41,11 +41,5 @@ const styles = StyleSheet.create({
   bodyContent: {
     flex: 1,
     alignItems: 'center',
-  },
-  nav: {
-    backgroundColor: globalStyles.secondaryBackground.backgroundColor,
-    width: '100%',
-    height: 80,
-    alignItems: 'center',
   }
 });

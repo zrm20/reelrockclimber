@@ -1,20 +1,29 @@
-import React, {useState,} from 'react';
+import React, {useState} from 'react';
 import { View, Text, Button, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
 import{ globalStyles } from '../styles/gobalStyles'
 import ImagePicker from '../components/ImgSelector';
 import ImgSelector from '../components/ImgSelector';
+import { ExpoImagePicker } from '../components/ExpoImagePicker';
 
-export function NewClimber({ navigation }) {
+export function NewClimber({ route, navigation }) {
+
+  const [nameField, setNameField] = useState("Hello");
+  const { submitHandler } = route.params;
+
   const pressHandler = () => {
-    navigation.navigate('Users')
+    submitHandler(nameField);
+    navigation.navigate('Users');
   }
   return(
     <View style={styles.container}>
       <View style={styles.form}>
         <Text style={globalStyles.h3}>Climber Name</Text>
-        <TextInput style={styles.textInput}/ >
+        <TextInput 
+          style={styles.textInput} 
+          onChangeText={setNameField}
+          />
         <Button style={styles.submitButton} title='Add Climber' onPress={pressHandler}/>
-        <ImgSelector />
+        <ExpoImagePicker />
       </View>
 
     </View>
