@@ -16,15 +16,25 @@ function Stat({ category } ) {
 }
 
 // accepts an array of stat categories that contain name, average and max 
-export function StatsWidget( { categories } ) {
-  return (
-    <View style={globalStyles.widget}>
-      <Text style={globalStyles.h2}>Stats</Text>
-      <View style={styles.table}>
-       {categories.map(item => <Stat key={item.key} category={item} />)}
+export function StatsWidget( { climber } ) {
+  const activeClimber = climber;
+
+  if(activeClimber){
+    return (
+      <View style={globalStyles.widget}>
+        <Text style={globalStyles.h2}>Stats</Text>
+        <View style={styles.table}>
+        {activeClimber.dashStats.map(item => <Stat key={item.key} category={item} />)}
+        </View>
       </View>
-    </View>
-  );
+    );
+  }else{
+    return(
+      <View style={globalStyles.widget}>
+          <Text style={globalStyles.h2}>No Stats</Text>
+      </View>
+    )
+  }
 } 
 
 const styles = StyleSheet.create({

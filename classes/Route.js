@@ -2,18 +2,8 @@ export default class Route {
 
   //todo add index properties so higher classes can calc avg and max ratings
 
-  constructor(id, sessionId, type, rating, attempts, isSent = true, height = null){
-    this.id = id;
-    this.sessionId = sessionId;
-    this.type = type;
-    this.rating = rating;
-    this.isSent = isSent;
-    this.attempts = attempts;
-    this.height = this.type === 'boulder' ? null : height;
-  }
-
-//score values
-  boulderValues = {
+  //score values
+  static boulderValues = {
     v0: {index: 1, rating: 'V0', score: 2},
     v1: {index: 2, rating: 'V1', score: 10},
     v2: {index: 3, rating: 'V2', score: 20},
@@ -26,8 +16,8 @@ export default class Route {
     v9: {index: 10, rating: 'V9', score: 90},
     v10: {index: 11, rating: 'V10', score: 100}
   }
-
-  wallValues = {
+  
+  static wallValues = {
     '5.4': {index: 1, rating: '5.4', topRopeScore: 1, leadScore: 10},
     '5.5': {index: 2, rating: '5.5', topRopeScore: 2, leadScore: 15},
     '5.6': {index: 3, rating: '5.6', topRopeScore: 3, leadScore: 20},
@@ -46,6 +36,17 @@ export default class Route {
     '5.13': {index: 16, rating: '5.13', topRopeScore: 120, leadScore: 200}
   }
 
+  constructor(id, sessionId, type, rating, attempts, isSent = true, height = null){
+    this.id = id;
+    this.sessionId = sessionId;
+    this.type = type;
+    this.rating = rating;
+    this.isSent = isSent;
+    this.attempts = attempts;
+    this.height = this.type === 'boulder' ? null : height;
+  }
+
+
 //meathods
   calcScore() {
     let sentMultiplier = this.isSent ? 1 : .5;
@@ -53,13 +54,13 @@ export default class Route {
 
     switch(this.type){
       case 'boulder': {
-        return this.boulderValues[this.rating].score * sentMultiplier * attemptMultiplier;
+        return Route.boulderValues[this.rating].score * sentMultiplier * attemptMultiplier;
       }
       case 'topRope': {
-        return this.wallValues[this.rating].topRopeScore * sentMultiplier * attemptMultiplier;
+        return Route.wallValues[this.rating].topRopeScore * sentMultiplier * attemptMultiplier;
       }
       case 'lead': {
-        return this.wallValues[this.rating].leadScore * sentMultiplier * attemptMultiplier;
+        return Route.wallValues[this.rating].leadScore * sentMultiplier * attemptMultiplier;
       }
     }
   }
@@ -84,23 +85,23 @@ export default class Route {
   get ratingName() {
     switch(this.type){
       case 'boulder': {
-        return this.boulderValues[this.rating].rating
+        return Route.boulderValues[this.rating].rating
       }
       case 'topRope': {
-        return this.wallValues[this.rating].rating
+        return Route.wallValues[this.rating].rating
       }
       case 'lead': {
-        return this.wallValues[this.rating].rating
+        return Route.wallValues[this.rating].rating
       }
     }
   }
 
-  getRatingIndex() {
+  get ratingIndex() {
     if(this.type === 'boulder'){
-      return this.boulderValues[this.rating].index
+      return Route.boulderValues[this.rating].index
     }
     else{
-      return this.wallValues[this.rating].index
+      return Route.wallValues[this.rating].index
     }
   }
 }

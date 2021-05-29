@@ -4,17 +4,16 @@ import{ globalStyles } from '../styles/gobalStyles'
 import ImagePicker from '../components/ImgSelector';
 import ImgSelector from '../components/ImgSelector';
 
-export function NewClimber() {
-
+export function NewClimber({ navigation }) {
+  const pressHandler = () => {
+    navigation.navigate('Users')
+  }
   return(
     <View style={styles.container}>
-
-      <Text style={globalStyles.h1}>ReelRock Climber</Text>
-      <Text style={globalStyles.h2}>New Climber Profile</Text>
       <View style={styles.form}>
         <Text style={globalStyles.h3}>Climber Name</Text>
         <TextInput style={styles.textInput}/ >
-        <Button style={styles.submitButton} title='Add Climber'/>
+        <Button style={styles.submitButton} title='Add Climber' onPress={pressHandler}/>
         <ImgSelector />
       </View>
 
@@ -25,7 +24,7 @@ export function NewClimber() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 50,
+    paddingTop: 100,
     paddingHorizontal: 3,
     backgroundColor: '#360568',
     alignItems: 'center',

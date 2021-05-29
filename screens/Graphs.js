@@ -1,32 +1,35 @@
 import React from 'react';
 import { Text, View, ScrollView, StyleSheet, } from 'react-native';
 import { globalStyles } from '../styles/gobalStyles';
-import { ClimberWidget } from '../components/ClimberWidget';
-import { StatsWidget } from '../components/StatsWidget';
-import { GoalsWidget } from '../components/GoalsWidget';
-import { LastMonthWidget } from '../components/LastMonthWidget'
 
 //accepts a climber object to pass down data
-export function Dashboard( { climber } ) {
+export function Graphs( { climber } ) {
   const activeClimber = climber;
+
+  if(activeClimber){
     return(
       <View style={styles.container}>
-        <ClimberWidget climber={activeClimber} />
+        <Text style={globalStyles.h1}>ReelRock Climber</Text>
+        <Text style={globalStyles.h1}>Graphs</Text>
         <ScrollView style={styles.body}>
-          <View style={styles.bodyContent}>
-            <StatsWidget climber={activeClimber}/>
-            <LastMonthWidget />
-            <GoalsWidget climber={activeClimber}/>
-          </View>
+          
         </ScrollView>
       </View>
     );
+  }else{
+    return(
+      <View style={styles.container}>
+        <Text style={globalStyles.h1}>Graphs</Text>
+        <Text>No Active Climber!</Text>
+      </View>
+    )
+  }
 };
 
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    paddingTop: 100,
+    paddingTop: 50,
     paddingHorizontal: 3,
     backgroundColor: globalStyles.mainBackground.backgroundColor,
     alignItems: 'center',

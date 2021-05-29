@@ -1,4 +1,5 @@
 import Session from './Session';
+import Route from './Route'
 
 export default class Climber {
   constructor(id, name, picUri) {
@@ -10,9 +11,24 @@ export default class Climber {
     this.goalList = [];
   }
 
+  //meathods
   addSession(location, energy, mood){
     const nextId = this.sessionList.length + 1;
     this.sessionList.push(new Session(nextId, this.id, location, energy, mood));
+  }
+
+  getAvgRouteIndex(type){
+    let indexTotal = 0;
+    let totalRoutes = 0;
+
+    this.climberRouteList.forEach((r) => 
+    {
+      if(r.type === type && r.isSent){
+        indexTotal += r.ratingIndex;
+        totalRoutes++;
+      }
+    })
+    return indexTotal / totalRoutes;
   }
 
   //properties
@@ -28,6 +44,16 @@ export default class Climber {
     return totalHeight;
   }
 
+  get climberRouteList() {
+    let totalRoutes = [];
+
+    this.sessionList.forEach((s) =>{
+      totalRoutes.concat([1,1]);
+    })
+    
+    return totalRoutes;
+  }
+
   get avgSessionScore() {
     return this.totalPoints / this.sessionList.length;
   }
@@ -35,22 +61,34 @@ export default class Climber {
   get maxSessionScore() {
     return this.sessionList.reduce((max, p) => (p.score > max ? p.score : max), this.sessionList[0].score)
   }
+  
+  get avgBoulderRating(){
+    return this.getAvgRouteIndex('boulder');
+  }
+
+  get avgTopRopeRating(){
+    return this.getAvgRouteIndex('topRope');
+  }
+
+  get avgLeadRating(){
+    return this.getAvgRouteIndex('lead');
+  }
 
   get dashStats() {
     return ([
       {
         name: 'Boulder',
-        average: 'VV',
+        average: this.avgBoulderRating,
         max: "VM"
       },
       {
         name: 'Top-Rope',
-        average: '5.a',
+        average: this.avgTopRopeRating,
         max: '5.m'
       },
       {
         name: 'Lead',
-        average: '5.la',
+        average: this.avgLeadRating,
         max: '5.lm'
       },
       {

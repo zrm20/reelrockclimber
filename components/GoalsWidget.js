@@ -26,13 +26,23 @@ function Goal({ goal }){
   )
 }
 
-export function GoalsWidget({ goalList }) {
-  return (
-    <View style={globalStyles.widget}>
-      <Text style={globalStyles.h2}>Goals</Text>
-      {goalList.map(item => <Goal key={item.key} goal={item}/>)}
-    </View>
-  );
+export function GoalsWidget({ climber }) {
+  const activeClimber = climber
+  
+  if(activeClimber){
+    return (
+      <View style={globalStyles.widget}>
+        <Text style={globalStyles.h2}>Goals</Text>
+        {activeClimber.goalList.map(item => <Goal key={item.key} goal={item}/>)}
+      </View>
+    );
+  }else{
+    return(
+      <View style={globalStyles.widget}>
+          <Text style={globalStyles.h2}>No Goals Saved</Text>
+      </View>
+    )
+  }
 } 
 
 const styles = StyleSheet.create({

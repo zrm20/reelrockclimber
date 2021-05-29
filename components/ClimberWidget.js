@@ -4,20 +4,36 @@ import { globalStyles } from '../styles/gobalStyles'
 
 //accpets a climber object that contains name, pic, totalPoints, and totalFeet
 export function ClimberWidget( { climber }) {
-  return (
-    <View style={globalStyles.widget}>
-      <TouchableOpacity style={styles.container}>
-        <Image style={styles.img} source={climber.picUri ? climber.picUri : require('../assets/climbs.png')}/>
-        <View style={styles.name}>
-          <Text style={globalStyles.h2}>{climber.name}</Text>
-          <View style={styles.info}>
-            <Text style={styles.text}>{climber.totalPoints} Total Points</Text>
-            <Text style={styles.text}>{climber.totalHeight}' Climbed</Text>
+  const activeClimber = climber;
+
+  if(activeClimber){
+    return (
+      <View style={globalStyles.widget}>
+        <TouchableOpacity style={styles.container}>
+          <Image style={styles.img} source={climber.picUri ? climber.picUri : require('../assets/climbs.png')}/>
+          <View style={styles.name}>
+            <Text style={globalStyles.h2}>{climber.name}</Text>
+            <View style={styles.info}>
+              <Text style={styles.text}>{climber.totalPoints} Total Points</Text>
+              <Text style={styles.text}>{climber.totalHeight}' Climbed</Text>
+            </View>
           </View>
-        </View>
-      </TouchableOpacity>
-    </View>
-  );
+        </TouchableOpacity>
+      </View>
+    );
+  }else{
+    return(
+      <View style={globalStyles.widget}>
+        <TouchableOpacity style={styles.container}>
+          <Image style={styles.img} source={require('../assets/climbs.png')}/>
+          <View style={styles.name}>
+            <Text style={globalStyles.h2}>No Climber Selected</Text>
+            
+          </View>
+        </TouchableOpacity>
+      </View>
+    )
+  }
 } 
 
 const styles = StyleSheet.create({
