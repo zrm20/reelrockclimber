@@ -7,21 +7,21 @@ import { ClimberWidget } from '../components/ClimberWidget';
 
 export function Users( { navigation } ) {
 
-  // const [climberList, setClimberList] = useState([])
+  const [climberList, setClimberList] = useState([])
 
-  // function addClimber(name) {
-  //   const nextId = climberList.length > 0 ? climberList[climberList.length - 1].id + 1 : 1;
-  //   setClimberList([...climberList, new Climber(nextId, name)]);
-  //   console.log(`${name} added to climber list`);
-  // }
+  function addClimber(name) {
+    const nextId = climberList.length > 0 ? climberList[climberList.length - 1].id + 1 : 1;
+    setClimberList([...climberList, new Climber(nextId, name)]);
+    console.log(`${name} added to climber list`);
+  }
 
-  // const pressHandler = () => navigation.navigate('New Climber', {submitHandler: addClimber});
+  const pressHandler = () => navigation.navigate('New Climber', {submitHandler: addClimber});
 
   return(
     <View style={styles.container}>
-      {/* <ScrollView style={styles.body}>
+      <ScrollView style={styles.body}>
         {climberList.map((item) => (<ClimberWidget key={item.id} climber={item}/>))}
-      </ScrollView> */}
+      </ScrollView>
       <NewClimberButton pressHandler={pressHandler}/>
     </View>
   );

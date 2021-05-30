@@ -109,7 +109,6 @@ export function NavBar() {
 const globalHeaderStyle = {
   headerStyle: {
     backgroundColor: globalStyles.mainBackground.backgroundColor,
-    marginBottom: 20
   },
   headerTintColor: globalStyles.titleFont.color,
   headerTitleStyle: {
