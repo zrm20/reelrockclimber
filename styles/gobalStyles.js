@@ -1,63 +1,79 @@
 import { StyleSheet } from 'react-native';
 
+export const colors = {
+  color1: '#360568',
+  color2: '#5b2a86',
+  color3: '#7785ac',
+  color4: '#9ac6c5',
+  color5: '#a5e6ba',
+  white: '#fff',
+  muted: '#ddd'
+}
+
+export const fonts = {
+  headlineFont: 'lithos-pro',
+  bodyFont: 'arial-rounded'
+}
+
 export const globalStyles = StyleSheet.create({
   h1: {
-    fontFamily: 'lithos-pro',
+    fontFamily: fonts.headlineFont,
     fontSize: 38,
-    color: '#A5E6BA',
+    color: colors.color5,
     marginVertical: 4,
   }, 
   h2: {
-    fontFamily: 'lithos-pro',
+    fontFamily: fonts.headlineFont,
     fontSize: 30,
-    color: '#A5E6BA',
+    color: colors.color5,
   },
   h3: {
-    color: '#fff',
+    color: colors.white,
     fontSize: 28,
-    fontFamily: 'arial-rounded',
+    fontFamily: fonts.bodyFont,
   },
   mainBackground: {
-    backgroundColor: '#360568'
+    backgroundColor: colors.color1
   },
   secondaryBackground: {
-    backgroundColor: '#7785AC'
+    backgroundColor: colors.color3
   },
   widget: {
-    backgroundColor: '#7785AC',
+    backgroundColor: colors.color3,
     width: '95%',
     borderRadius: 7,
     padding: 7,
     marginVertical: 4,
   },
   titleFont: {
-    fontFamily: 'lithos-pro',
-    color: '#A5E6BA'
+    fontFamily: fonts.headlineFont,
+    color: colors.color5
   },
   headerFont: {
-    color: '#fff',
-    fontFamily: 'arial-rounded'
+    color: colors.white,
+    fontFamily: fonts.bodyFont
   },
   bodyFont: {
-    color: '#fff',
-    fontFamily: 'arial-rounded'
+    color: colors.white,
+    fontFamily: fonts.bodyFont
   },
   primaryBorder: {
-    borderColor: '#A5E6BA'
+    borderColor: colors.color5
   },
   bgColor1: {
-    backgroundColor: '#360568'
+    backgroundColor: colors.color1
   },
   bgColor2: {
-    backgroundColor: '#5b2a86'
+    backgroundColor: colors.color2
   },
   bgColor3: {
-    backgroundColor: '#7785ac'
+    backgroundColor: colors.color3
   },
   bgColor4: {
-    backgroundColor: '#9ac6c5'
+    backgroundColor: colors.color4
   },
   bgColor5: {
-    backgroundColor: '#a5e6ba'
+    backgroundColor: colors.color5
   }
 });
+

@@ -1,20 +1,23 @@
 import React from 'react';
 import * as Progress from 'react-native-progress';
 import { Text, TouchableOpacity, View, StyleSheet, } from 'react-native';
-import { globalStyles } from '../styles/gobalStyles';
+import { colors, fonts, globalStyles } from '../styles/gobalStyles';
 import { Foundation } from '@expo/vector-icons';
+
+// This widget accepts a climber object that contains an array goalsList. The goals list array should contain a list of goal objects with they keys name, progess and days to go.
+
 
 function Goal({ goal }){
   return(
     <TouchableOpacity style={styles.row}>
-      <Foundation name="target-two" size={32} color="#9ac6c5" />
+      <Foundation name="target-two" size={32} color={colors.color4} />
       <View>
         <View style={styles.progressContainer}>
           <Text style={styles.text}>{goal.name}</Text>
           <Progress.Bar 
             progress={goal.progress} 
-            color={'#5b2a86'} 
-            borderColor={'#9ac6c5'}
+            color={colors.color2} 
+            borderColor={colors.color4}
             width={300}
             height={10}
             borderRadius={10}
@@ -49,8 +52,8 @@ const styles = StyleSheet.create({
   container: {
   },
   text:{
-    color: 'white',
-    fontFamily: 'arial-rounded'
+    color: colors.white,
+    fontFamily: fonts.bodyFont
   },
   row: {
     flexDirection: 'row',

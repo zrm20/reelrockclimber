@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, Image, TouchableOpacity, View, StyleSheet, } from 'react-native';
-import { globalStyles } from '../styles/gobalStyles'
+import { colors, fonts, globalStyles } from '../styles/gobalStyles'
 
 //accpets a climber object that contains name, pic, totalPoints, and totalFeet
 export function ClimberWidget( { climber }) {
@@ -56,7 +56,7 @@ const styles = StyleSheet.create({
   text:{
     marginTop: 3,
     marginRight: 15,
-    color: 'white',
-    fontFamily: 'arial-rounded'
+    color: colors.white,
+    fontFamily: fonts.bodyFont
   }
 });

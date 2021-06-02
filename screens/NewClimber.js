@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import { View, Text, Button, TextInput, StyleSheet, TouchableOpacity } from 'react-native';
-import{ globalStyles } from '../styles/gobalStyles'
+import{ colors, fonts, globalStyles } from '../styles/gobalStyles'
 import ImagePicker from '../components/ImgSelector';
 import ImgSelector from '../components/ImgSelector';
 import { ExpoImagePicker } from '../components/ExpoImagePicker';
@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
     flex: 1,
     paddingTop: 100,
     paddingHorizontal: 3,
-    backgroundColor: '#360568',
+    backgroundColor: colors.color1,
     alignItems: 'center',
   },
   form: {
@@ -45,12 +45,12 @@ const styles = StyleSheet.create({
 
   },
   text: {
-    color: '#fff',
+    color: colors.white,
     fontSize: 20,
-    fontFamily: 'ariel-rounded',
+    fontFamily: fonts.bodyFont,
   },
   textInput: {
-    backgroundColor: '#fff',
+    backgroundColor: colors.white,
     width: '90%',
     height: 40,
     marginBottom: 60,

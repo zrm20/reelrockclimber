@@ -1,6 +1,6 @@
 import React from 'react';
 import { Text, TouchableOpacity, View, StyleSheet, FlatList } from 'react-native';
-import { globalStyles } from '../styles/gobalStyles'
+import { colors, fonts, globalStyles } from '../styles/gobalStyles'
 
 // accepts a single stat category that contains a name, average and max
 function Stat({ category } ) {
@@ -41,19 +41,19 @@ const styles = StyleSheet.create({
   container: {
   },
   headerText:{
-    color: 'white',
-    fontFamily: 'arial-rounded',
+    color: colors.white,
+    fontFamily: fonts.bodyFont,
     fontWeight: 'bold',
     fontSize: 20,
   },
   dataText:{
-    color: 'white',
-    fontFamily: 'arial-rounded',
+    color: colors.white,
+    fontFamily: fonts.bodyFont,
     fontSize: 20,
   },
   text:{
-    color: '#ddd',
-    fontFamily: 'arial-rounded'
+    color: colors.muted,
+    fontFamily: fonts.bodyFont
   },
   table:{
     flexDirection: 'row',

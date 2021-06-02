@@ -9,7 +9,7 @@ import { NewClimber } from '../screens/NewClimber'
 import { Users } from '../screens/Users';
 import { LogBook } from '../screens/LogBook';
 import { Graphs } from '../screens/Graphs';
-import { globalStyles } from '../styles/gobalStyles';
+import { colors, fonts, globalStyles } from '../styles/gobalStyles';
 
 
 function NewSessionScreen() {
@@ -85,11 +85,11 @@ export function NavBar() {
           },
         })}
         tabBarOptions={{
-          activeTintColor: '#a5e6ba',
-          inactiveTintColor: '#7785ac',
-          activeBackgroundColor: '#360568',
-          inactiveBackgroundColor: '#360568',
-          style: { borderTopWidth: 0, backgroundColor: '#360568'},
+          activeTintColor: colors.color5,
+          inactiveTintColor: colors.color3,
+          activeBackgroundColor: colors.color1,
+          inactiveBackgroundColor: colors.color1,
+          style: { borderTopWidth: 0, backgroundColor: colors.color1},
       
         }}
       >
@@ -112,7 +112,7 @@ const globalHeaderStyle = {
   },
   headerTintColor: globalStyles.titleFont.color,
   headerTitleStyle: {
-    fontFamily: globalStyles.titleFont.fontFamily,
+    fontFamily: fonts.headlineFont,
     fontSize: 38
   },
   headerTransparent: true,
