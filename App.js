@@ -7,7 +7,7 @@ import Climber from './classes/Climber';
 import { NavBar } from './components/NavBar';
 import { globalStyles } from './styles/gobalStyles';
 import { Provider } from 'react-redux';
-import store from './store/store';
+import { store } from './store/store';
 
 const getFonts = () => {
   return Font.loadAsync({
