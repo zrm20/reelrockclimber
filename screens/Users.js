@@ -1,33 +1,44 @@
 import React, { useState } from 'react';
-import { Text, View, ScrollView, StyleSheet, } from 'react-native';
+import { Text, View, ScrollView, StyleSheet, Button, } from 'react-native';
 import { NewClimberButton } from '../components/NewClimberButton';
 import { globalStyles } from '../styles/gobalStyles';
-import Climber from '../classes/Climber'
 import { ClimberWidget } from '../components/ClimberWidget';
 import { useSelector } from 'react-redux';
 
 export function Users( { navigation } ) {
 
+  const [isEditing, setIsEditing] = useState(false);
   const climberList = useSelector((state)=> (state.climberList));
-  console.log('climber list is:')
-  console.log(climberList);
 
-  // function addClimber(name) {
-  //   const nextId = climberList.length > 0 ? climberList[climberList.length - 1].id + 1 : 1;
-  //   setClimberList([...climberList, new Climber(nextId, name)]);
-  //   console.log(`${name} added to climber list`);
-  // }
+  const pressHandler = () => navigation.navigate('New Climber');
 
-  const pressHandler = () => navigation.navigate('New Climber', {submitHandler: addClimber});
-
-  return(
-    <View style={styles.container}>
-      <ScrollView style={styles.body}>
-        {climberList.map((item) => (<ClimberWidget key={item.id} climber={item}/>))}
-      </ScrollView>
-      <NewClimberButton pressHandler={pressHandler}/>
-    </View>
-  );
+  if(!isEditing){
+    return(
+      <View style={styles.container}>
+        <Button 
+          title="Edit"
+          onPress={()=> setIsEditing(true)}
+          />
+        <ScrollView style={styles.body}>
+          {climberList.map((item) => (<ClimberWidget key={item.id} climber={item}/>))}
+        </ScrollView>
+        <NewClimberButton pressHandler={pressHandler}/>
+      </View>
+    );
+  }else{
+    return(
+      <View style={styles.container}>
+        <Button 
+          title="Done"
+          onPress={() => setIsEditing(false)}
+          />
+        <ScrollView style={styles.body}>
+          {climberList.map((item) => (<ClimberWidget key={item.id} climber={item}/>))}
+        </ScrollView>
+        <NewClimberButton pressHandler={pressHandler}/>
+      </View>
+    );
+  }
 };
 
 const styles = StyleSheet.create({

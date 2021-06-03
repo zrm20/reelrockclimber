@@ -1,9 +1,8 @@
- import { createSlice, configureStore } from '@reduxjs/toolkit'
+import { createSlice, configureStore } from '@reduxjs/toolkit'
 import Climber from '../classes/Climber';
 
 //testing
-  const pic = require('../assets/acr.jpeg');
-  let alyssa = new Climber(1, 'Alyssa Reel', pic);
+  let alyssa = new Climber(1, 'Alyssa Reel', 'file:///Users/zachmccoy/Dev/reelrockclimber/assets/acr.jpeg');
   alyssa.addSession(1, 'west', 5, 1);
   alyssa.sessionList[0].addRoute('boulder', 'v2', 1, true);
   alyssa.sessionList[0].addRoute('boulder', 'v3', 1, true);
@@ -27,10 +26,9 @@ import Climber from '../classes/Climber';
     }
   ]
 
-  let zach = new Climber(2, 'Zach McCoy');
+  let zach = new Climber(2, 'Zach McCoy', 'file:///Users/zachmccoy/Dev/reelrockclimber/assets/zm.jpeg');
   zach.addSession(1, 'east', 3, 1);
   zach.sessionList[0].addRoute('lead', '5.9', 1, true, {height: 45});
-  console.log(zach.totalPoints);
   zach.sessionList[0].addRoute('topRope', '5.10-', 2, true, {height: 45});
   zach.sessionList[0].addRoute('boulder', 'v4', 3, true);
   zach.sessionList[0].addRoute('boulder', 'v1', 7, false);
@@ -44,12 +42,14 @@ const climberListSlice = createSlice({
   ],
   reducers: {
     //add a new climber to the list of climbers
-    addClimber: (state, newClimber) => {
-      state.value.push(newClimber);
+    addClimber: (state, action) => {
+      state.push(action.payload)
+      console.log(action.payload.name + " added to the climberList")
+      console.log(action.payload.picUri)
     },
     //removes a climber based on the climber id
     removeClimberById: (state, idToRemove) => {
-      state.value.pop()
+      state.pop()
     }
   }
 })

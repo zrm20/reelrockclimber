@@ -2,10 +2,10 @@ import Session from './Session';
 import Route from './Route'
 
 export default class Climber {
-  constructor(id, name, picUri) {
+  constructor(id, name, picUri, options) {
     this.id = id;
     this.name = name;
-    this.picUri= picUri;
+    this.picUri= picUri ? String(picUri) : null;
     this.dateCreated = new Date(Date.now());
     this.sessionList = [];
     this.goalList = [];
