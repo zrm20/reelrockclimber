@@ -1,6 +1,8 @@
 export default class Route {
 
-  //todo add index properties so higher classes can calc avg and max ratings
+  //TODO redo the constructor to accept an object, so that paramaters may be passed in optionally and desctructured
+
+  //TODO redo the values objects and clean up
 
   //score values
   static boulderValues = {
@@ -36,14 +38,18 @@ export default class Route {
     '5.13': {index: 16, rating: '5.13', topRopeScore: 120, leadScore: 200}
   }
 
-  constructor(id, sessionId, type, rating, attempts, isSent = true, height = null){
+
+  //requires id, sessionID, type, rating, attempts. Options object may contain height, color, and notes
+  constructor(id, sessionId, type, rating, attempts, isSent = true, options){
     this.id = id;
     this.sessionId = sessionId;
     this.type = type;
     this.rating = rating;
     this.isSent = isSent;
     this.attempts = attempts;
-    this.height = this.type === 'boulder' ? null : height;
+    this.height = options && options["height"] ? options["height"] : null;
+    this.notes = options && options["notes"] ? options["notes"] : null;
+    this.color = options && options["color"] ? options["color"] : null;
   }
 
 

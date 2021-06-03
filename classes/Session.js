@@ -8,12 +8,17 @@ export default class Session {
     this.energy = (energy > 0 && energy <= 10) ? energy : null;
     this.mood = (mood >= -5 && mood <= 5) ? mood : null;
     this.routeList = [];
+    this.bonusPoints = 0;
     this.date = new Date(Date.now());
   }
   
-  addRoute(type, rating, attempts, isSent, height) {
+  addRoute(type, rating, attempts, isSent, options) {
     const nextRouteID = this.routeList.length + 1;
-    this.routeList.push(new Route(nextRouteID, this.id, type, rating, attempts, isSent, height));
+    if(options){
+      this.routeList.push(new Route(nextRouteID, this.id, type, rating, attempts, isSent, options));
+    }else{
+       this.routeList.push(new Route(nextRouteID, this.id, type, rating, attempts, isSent));
+    }
   }
   
   //meathods

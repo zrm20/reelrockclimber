@@ -7,13 +7,13 @@ import Climber from '../classes/Climber';
   alyssa.addSession(1, 'west', 5, 1);
   alyssa.sessionList[0].addRoute('boulder', 'v2', 1, true);
   alyssa.sessionList[0].addRoute('boulder', 'v3', 1, true);
-  alyssa.sessionList[0].addRoute('topRope', '5.10+', 2, true, 45);
-  alyssa.sessionList[0].addRoute('lead', '5.9', 5, false, 20);
-  alyssa.sessionList[0].addRoute('lead', '5.7', 1, true, 45);
-  alyssa.sessionList[0].addRoute('topRope', '5.10+', 1, true, 45);
-  alyssa.sessionList[0].addRoute('topRope', '5.11-', 3, true, 45);
-  alyssa.sessionList[0].addRoute('topRope', '5.11+', 8, false, 16);
-  alyssa.sessionList[0].addRoute('topRope', '5.11+', 8, false, 16);
+  alyssa.sessionList[0].addRoute('topRope', '5.10+', 2, true, {height: 45});
+  alyssa.sessionList[0].addRoute('lead', '5.9', 5, false, {height: 20});
+  alyssa.sessionList[0].addRoute('lead', '5.7', 1, true, {height: 45});
+  alyssa.sessionList[0].addRoute('topRope', '5.10+', 1, true, {height: 45});
+  alyssa.sessionList[0].addRoute('topRope', '5.11-', 3, true, {height: 45});
+  alyssa.sessionList[0].addRoute('topRope', '5.11+', 8, false, {height: 16});
+  alyssa.sessionList[0].addRoute('topRope', '5.11+', 8, false, {height: 16});
   alyssa.goalList = [
     {
       name: "Lead a 5.11",
@@ -29,8 +29,9 @@ import Climber from '../classes/Climber';
 
   let zach = new Climber(2, 'Zach McCoy');
   zach.addSession(1, 'east', 3, 1);
-  zach.sessionList[0].addRoute('lead', '5.9', 1, true, 45);
-  zach.sessionList[0].addRoute('top-rope', '5.10-', 2, true, 45);
+  zach.sessionList[0].addRoute('lead', '5.9', 1, true, {height: 45});
+  console.log(zach.totalPoints);
+  zach.sessionList[0].addRoute('topRope', '5.10-', 2, true, {height: 45});
   zach.sessionList[0].addRoute('boulder', 'v4', 3, true);
   zach.sessionList[0].addRoute('boulder', 'v1', 7, false);
 //end testing
