@@ -1,11 +1,11 @@
 import React from 'react';
-import { Text, View, StyleSheet, } from 'react-native';
-import { colors } from '../styles/gobalStyles';
+import { View, Text, StyleSheet } from 'react-native';
+import { colors } from '../styles/gobalStyles'
 
-export function Graphs() {
-  return(
+export default function NewSessionScreen() {
+  return (
     <View style={styles.container}>
-      <Text>Graphs</Text>
+      <Text>New Session</Text>
     </View>
   )
 };
@@ -16,5 +16,5 @@ const styles = StyleSheet.create({
     backgroundColor: colors.color1,
     alignItems: 'center',
     padding: '2%'
-  },
+  }
 });

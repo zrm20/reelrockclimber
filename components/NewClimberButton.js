@@ -1,6 +1,6 @@
 import React from 'react';
 import { TouchableOpacity, View, Text, StyleSheet } from 'react-native';
-import { globalStyles } from '../styles/gobalStyles';
+import { colors, globalStyles } from '../styles/gobalStyles';
 import { FontAwesome } from '@expo/vector-icons';
 
 export function NewClimberButton({ pressHandler }) {
@@ -16,10 +16,10 @@ const styles = StyleSheet.create({
   container: {
     width: 300,
     height: 100,
-    borderColor: globalStyles.primaryBorder.borderColor,
+    borderColor: colors.color3,
     borderWidth: 3,
     borderRadius: 30,
-    backgroundColor: globalStyles.mainBackground.backgroundColor,
+    backgroundColor: colors.color1,
     margin: 20,
     padding: 3,
     alignItems: 'center'

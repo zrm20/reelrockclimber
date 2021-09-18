@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
-import { Button, Image, View, Platform } from 'react-native';
+import { Image, View, Platform, StyleSheet } from 'react-native';
 import * as ImagePicker from 'expo-image-picker';
-import Constants from 'expo-constants';
+import CircleButton from './CircleButton';
 
 export default function ImgSelector() {
   const [image, setImage] = useState(null);
@@ -33,9 +33,25 @@ export default function ImgSelector() {
   };
 
   return (
-    <View style={{ flex: 1, alignItems: 'center', justifyContent: 'center' }}>
-      <Button title="Pick an image from camera roll" onPress={pickImage} />
-      {image && <Image source={{ uri: image }} style={{ width: 200, height: 200 }} />}
+    <View style={styles.container}>
+      <Image 
+        source={image ? { uri: image } : require('../assets/climbs.png')} 
+        style={styles.image} 
+      />
+      <CircleButton text="Pic" pressHandler={pickImage} />
     </View>
   );
-}
+};
+
+const styles = StyleSheet.create({
+  container: {
+    justifyContent: 'center',
+    alignItems: 'center',
+    margin: 5
+  },
+  image: {
+    width: 200,
+    height: 200,
+    borderRadius: 100
+  },
+});

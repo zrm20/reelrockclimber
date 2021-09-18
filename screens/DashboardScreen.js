@@ -1,13 +1,13 @@
 import React from 'react';
-import { Text, View, StyleSheet, } from 'react-native';
+import { View, Text, StyleSheet, } from 'react-native';
 import { colors } from '../styles/gobalStyles';
 
-export function Graphs() {
-  return(
-    <View style={styles.container}>
-      <Text>Graphs</Text>
-    </View>
-  )
+
+export default function DashboardScreen() {
+    return(
+      <View style={styles.container}>
+      </View>
+    );
 };
 
 const styles = StyleSheet.create({
