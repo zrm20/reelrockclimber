@@ -5,7 +5,9 @@ export const colors = {
   color4: '#9ac6c5',
   color5: '#a5e6ba',
   white: '#fff',
-  muted: '#ddd'
+  muted: '#ddd',
+  green: '#38b000',
+  red: '#d00000'
 }
 
 export const fonts = {
@@ -20,7 +22,7 @@ export const globalHeaderStyle = {
   headerTintColor: colors.color5,
   headerTitleStyle: {
     fontFamily: fonts.headlineFont,
-    fontSize: 38
+    fontSize: 24
   },
   headerTransparent: false,
 }

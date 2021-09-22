@@ -12,11 +12,11 @@ export default function CurrentSessionInfo() {
   return (
     <View style={styles.container}>
       <Text style={styles.dateText}>{dateString}</Text>
-      <Text style={styles.locationText}>{locationString}</Text>
+      <Text numberOfLines={1} adjustsFontSizeToFit style={styles.locationText}>{locationString}</Text>
       <Text style={styles.settingText}>{settingString}</Text>
       <View style={styles.row}>
-        <Text style={styles.totalsText}>Current Score: {currentScore}</Text>
-        <Text style={styles.totalsText}>Total Routes: {totalRoutes}</Text>
+        <Text numberOfLines={1} adjustsFontSizeToFit style={styles.totalsText}>Current Score: {currentScore}</Text>
+        <Text numberOfLines={1} adjustsFontSizeToFit style={styles.totalsText}>Total Routes: {totalRoutes}</Text>
       </View>
     </View>
   )
@@ -25,7 +25,6 @@ export default function CurrentSessionInfo() {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    height: '15%',
     margin: 5,
     backgroundColor: colors.color3,
     borderRadius: 10,
@@ -57,6 +56,6 @@ const styles = StyleSheet.create({
     color: colors.white,
     fontFamily: fonts.bodyFont,
     textAlign: 'center',
-    fontSize: 18
+    fontSize: 16,
   }
 })

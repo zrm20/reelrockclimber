@@ -19,14 +19,13 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     width: '100%',
-    margin: 5,
-    padding: '1%'
+    margin: 3,
+    padding: '1%',
   },
   title: {
     color: colors.color4,
     fontFamily: fonts.bodyFont,
-    fontSize: 20,
-    margin: 3
+    fontSize: 18,
   },
   scrollView: {
     backgroundColor: colors.color3,
@@ -36,7 +35,7 @@ const styles = StyleSheet.create({
     backgroundColor: colors.color5,
     textAlign: 'center',
     fontFamily: fonts.bodyFont,
-    fontSize: 18,
+    fontSize: 16,
     marginVertical: 4
   }
 })
